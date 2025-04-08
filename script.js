@@ -1,19 +1,19 @@
-function stringChop(str, size) {
-  // your code here
-	function chunkString(str, chunkLength) {
-    // Handle null input
+function chunkString(str, chunkLength) {
+    // Step 1: Handle edge cases
     if (str === null) return [];
+    if (chunkLength <= 0) return []; // Optional: handle invalid chunk length
 
-    const result = [];
+    const chunks = [];
 
+    // Step 2: Loop through the string
     for (let i = 0; i < str.length; i += chunkLength) {
-        result.push(str.slice(i, i + chunkLength));
+        // Step 3: Create chunks
+        chunks.push(str.substring(i, i + chunkLength));
     }
 
-    return result;
+    // Step 4: Return the result
+    return chunks;
 }
-}
-
 // Do not change the code below
 const str = prompt("Enter String.");
 const size = prompt("Enter Chunk Size.");
